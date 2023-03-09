@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    username: root
+    password: 121314
+    url: jdbc:mysql://localhost:3306/matools?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 10
+      max-wait: 6000
+      max-active: 20
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+  main:
+    allow-circular-references: true
+  messages:
+    basename: validation/ValidationMessages
+
+mybatis:
+  mapper-locations: classpath:mappers/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+pagehelper:
+  page-size-zero: true
+  reasonable: true
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /
