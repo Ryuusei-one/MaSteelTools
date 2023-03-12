@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <property name="APP_Name" value="myAppName" />
+    <contextName>${APP_Name}</contextName>
+    <!-- 系统日志输出 -->
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${APP_Name}/log.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 按天回滚 daily -->
+            <fileNamePattern>${APP_Name}/log.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- 日志最大的历史 30天 -->
+            <maxHistory>60</maxHistory>
+            <!--用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志-->
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        <!--  输出的日志格式
+         -->
+        <encoder>
+            <pattern>%d{HH:mm:ss} [%thread] %-5level %logger{80} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level ---- [%thread] %logger :%msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!-- logback为java中的包 -->
+    <logger name="logback"/>
+
+    <!-- 当日期等级 大于等于DEBUG时，输出到下面的目标
+        trace < debug < info < warning < error
+        堆栈信息   调试信息   普通信息  警告信息  错误信息
+    -->
+    <root level="info">
+        <appender-ref ref="file" />
+        <appender-ref ref="console" />
+    </root>
+</configuration>
