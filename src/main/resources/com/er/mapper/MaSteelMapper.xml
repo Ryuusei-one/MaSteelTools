@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.er.mapper.MaSteelMapper">
+
+<resultMap type="com.er.model.MaSteelModel" id="Matools">
+    <result property="id" column="id"/>
+    <result property="billetNum" column="billet_num"/>
+    <result property="createTime" column="create_time"/>
+    <result property="billetPicPath" column="billet_pic_path"/>
+    <result property="warpagePicPath" column="warpage_direction"/>
+
+
+</resultMap>
+
+<select id="getMsg" parameterType="com.er.model.MaSteelModel"  resultMap="Matools">
+    select
+    billet_info.id ,
+    billet_info.billet_num,
+    billet_info.create_time,
+    billet_info.billet_pic_path,
+    billet_info.warpage_direction
+    from
+    billet_info
+</select>
+
+
+</mapper>

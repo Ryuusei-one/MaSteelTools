@@ -1,7 +1,7 @@
 spring:
   datasource:
     username: root
-    password: 121314
+    password: root
     url: jdbc:mysql://localhost:3306/matools?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
