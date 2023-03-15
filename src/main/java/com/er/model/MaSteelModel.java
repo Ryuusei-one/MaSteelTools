@@ -13,5 +13,8 @@ public class MaSteelModel {
     private String billetNum;
     private Date createTime;
     private String billetPicPath;
+<<<<<<< HEAD
     private String warpagePicPath;
+=======
+>>>>>>> 0a7e5dc (修改表示层,提交vue.)
 }

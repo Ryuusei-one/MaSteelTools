@@ -2,7 +2,11 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="@localhost" uuid="49df2ddc-7ff8-4847-8c80-6b42858128e4">
+<<<<<<< HEAD
       <database-info product="MySQL" version="5.7.24" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)" dbms="MYSQL" exact-version="5.7.24" exact-driver-version="8.0">
+=======
+      <database-info product="MySQL" version="5.5.28" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.21 (Revision: 33f65445a1bcc544eb0120491926484da168f199)" dbms="MYSQL" exact-version="5.5.28" exact-driver-version="8.0">
+>>>>>>> 0a7e5dc (修改表示层,提交vue.)
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>

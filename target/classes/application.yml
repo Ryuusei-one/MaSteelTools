@@ -1,7 +1,11 @@
 spring:
   datasource:
     username: root
+<<<<<<< HEAD
     password: root
+=======
+    password: 121314
+>>>>>>> 0a7e5dc (修改表示层,提交vue.)
     url: jdbc:mysql://localhost:3306/matools?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
