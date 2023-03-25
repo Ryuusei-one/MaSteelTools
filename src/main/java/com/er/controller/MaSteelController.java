@@ -1,36 +1,37 @@
 package com.er.controller;
 
+import com.er.core.page.TableDataInfo;
 import com.er.model.MaSteelModel;
 import com.er.service.MaSteelService;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
-<<<<<<< HEAD
-=======
-import org.springframework.web.bind.annotation.CrossOrigin;
->>>>>>> 0a7e5dc (修改表示层,提交vue.)
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-<<<<<<< HEAD
-=======
+/**
+ * @author Ryuusei
+ */
 @CrossOrigin
->>>>>>> 0a7e5dc (修改表示层,提交vue.)
 @RestController
+@Controller
 @RequestMapping("masteel")
-public class MaSteelController {
+public class MaSteelController extends BaseController{
     @Autowired
     private MaSteelService maSteelService;
-    @RequestMapping("/getMsg")
-    public List<MaSteelModel> getMsg(){
-        List<MaSteelModel> msg = maSteelService.getMsg();
+    @ResponseBody
+    @PreAuthorize("@ss.hasPermi('project:masteel:getMsg')")
+    @GetMapping("/getMsg")
+    public TableDataInfo getMsg(MaSteelModel maSteelModel){
+//        pageNum = maSteelModel.getPageNum();
+//        pageSize = maSteelModel.getPageSize();
+//        PageHelper.startPage(pageNum,pageSize,"");
+        startPage();
+        List<MaSteelModel> msg = maSteelService.getMsg(maSteelModel);
         msg.forEach(System.out::println);
-        return msg;
+        return getDataTable(msg);
     }
-<<<<<<< HEAD
 
 }
-=======
-    }
->>>>>>> 0a7e5dc (修改表示层,提交vue.)

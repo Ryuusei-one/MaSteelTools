@@ -1,0 +1,17 @@
+10:54:15 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+10:54:15 [main] INFO  com.er.Application - Starting Application using Java 1.8.0_321 on Ryuusei with PID 2312 (F:\IDEA-WSP\MaSteelTools\target\classes started by Ryuusei in F:\IDEA-WSP\MaSteelTools)
+10:54:15 [main] INFO  com.er.Application - No active profile set, falling back to 1 default profile: "default"
+10:54:17 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+10:54:17 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+10:54:17 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+10:54:17 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+10:54:17 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+10:54:17 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1564 ms
+10:54:17 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+10:54:17 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+10:54:18 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+10:54:18 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+10:54:18 [main] INFO  com.er.Application - Started Application in 3.425 seconds (JVM running for 5.013)
+10:54:43 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:54:43 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+10:54:43 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms

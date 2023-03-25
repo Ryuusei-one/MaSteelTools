@@ -5,6 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+/**
+ * @author Ryuusei
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,8 +16,9 @@ public class MaSteelModel {
     private String billetNum;
     private Date createTime;
     private String billetPicPath;
-<<<<<<< HEAD
-    private String warpagePicPath;
-=======
->>>>>>> 0a7e5dc (修改表示层,提交vue.)
+
+//    /** pageNum 页数 */
+//    private int pageNum;
+//    /** pageSize 一页的行数 */
+//    private int pageSize;
 }

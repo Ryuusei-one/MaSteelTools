@@ -5,6 +5,9 @@ import com.er.model.MaSteelModel;
 
 import java.util.List;
 
+/**
+ * @author Ryuusei
+ */
 public interface MaSteelService {
-    public List<MaSteelModel> getMsg();
+    List<MaSteelModel> getMsg(MaSteelModel maSteelModel);
 }

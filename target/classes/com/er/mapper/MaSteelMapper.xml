@@ -7,11 +7,6 @@
     <result property="billetNum" column="billet_num"/>
     <result property="createTime" column="create_time"/>
     <result property="billetPicPath" column="billet_pic_path"/>
-<<<<<<< HEAD
-    <result property="warpagePicPath" column="warpage_direction"/>
-=======
->>>>>>> 0a7e5dc (修改表示层,提交vue.)
-
 
 </resultMap>
 
@@ -20,12 +15,7 @@
     billet_info.id ,
     billet_info.billet_num,
     billet_info.create_time,
-<<<<<<< HEAD
-    billet_info.billet_pic_path,
-    billet_info.warpage_direction
-=======
     billet_info.billet_pic_path
->>>>>>> 0a7e5dc (修改表示层,提交vue.)
     from
     billet_info
 </select>
