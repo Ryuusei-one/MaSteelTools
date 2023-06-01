@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.er.mapper.ImgMapper">
+
+    <resultMap type="com.er.model.ImgModel" id="Images">
+        <result property="id" column="id"/>
+        <result property="billetPicPath" column="billet_pic_path"/>
+        <result property="state" column="state"/>
+    </resultMap>
+
+    <select id="selectImgUrl" parameterType="com.er.model.ImgModel"  resultMap="Images">
+        select
+        billet_info.id ,
+        billet_info.billet_pic_path,
+        state
+        from
+        billet_info
+        where
+        state = #{state}
+        order by field(state,2,1,0) desc
+    </select>
+
+    <update id="state4state" parameterType="com.er.model.ImgModel">
+        update
+        billet_info
+        set
+        state = 3
+        where
+        state = #{state}
+    </update>
+</mapper>
