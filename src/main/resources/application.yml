@@ -3,10 +3,10 @@ spring:
 #    username: root
 #    password: 121314
 #    url: jdbc:mysql://112.31.48.184:3306/matools?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
-    url: jdbc:mysql://192.168.110.134:3306/matools?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+#    url: jdbc:mysql://192.168.110.134:3306/matools?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
     password: 121314
-#    url: jdbc:mysql://localhost:3306/matools?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/matools?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
