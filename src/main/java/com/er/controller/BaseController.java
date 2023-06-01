@@ -1,15 +1,10 @@
 package com.er.controller;
 
+import com.er.AjaxResult;
 import com.er.constant.HttpStatus;
-import com.er.core.page.PageDomain;
 import com.er.core.page.TableDataInfo;
-import com.er.core.page.TableSupport;
 import com.er.utils.DateUtils;
 import com.er.utils.PageUtils;
-import com.er.utils.SecurityUtils;
-import com.er.utils.StringUtils;
-import com.er.utils.sql.SqlUtil;
-import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,7 +49,16 @@ public class BaseController
         PageUtils.startPage();
     }
 
-
+    /**
+     * 响应返回结果
+     *
+     * @param rows 影响行数
+     * @return 操作结果
+     */
+    protected AjaxResult toAjax(int rows)
+    {
+        return rows > 0 ? AjaxResult.success() : AjaxResult.error();
+    }
     /**
      * 清理分页的线程变量
      */

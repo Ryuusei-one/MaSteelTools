@@ -20,7 +20,7 @@ public class PictureConversionConfig implements WebMvcConfigurer {
          * addResourceHandler：访问映射路径
          * addResourceLocations：资源绝对路径
          */
-        registry.addResourceHandler("/doctor/**")
-                .addResourceLocations("file:///F:/VSCode-WSP/vue-cli-mst/public/0313/");
+        registry.addResourceHandler("/image/**")
+                .addResourceLocations("file:///home/image/");
     }
 }

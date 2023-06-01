@@ -10,4 +10,8 @@ import java.util.List;
  */
 public interface MaSteelService {
     List<MaSteelModel> getMsg(MaSteelModel maSteelModel);
+//    int updateByIds(List<Long> ids, Integer state);
+    int updateById(MaSteelModel maSteelModel);
+    List<MaSteelModel> getMsgByState(MaSteelModel maSteelModel);
+    List<MaSteelModel> selectBilletInfoList(MaSteelModel maSteelModel);
 }

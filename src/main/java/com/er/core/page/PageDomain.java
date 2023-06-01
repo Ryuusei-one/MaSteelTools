@@ -15,6 +15,8 @@ public class PageDomain
     /** 每页显示记录数 */
     private Integer pageSize;
 
+    /** 状态 */
+//    private Integer state;
     /** 排序列 */
     private String orderByColumn;
 
@@ -52,6 +54,14 @@ public class PageDomain
     {
         this.pageSize = pageSize;
     }
+
+//    public Integer getState(){
+//        return state;
+//    }
+
+//    public void setState(Integer state){
+//        this.state = state;
+//    }
 
     public String getOrderByColumn()
     {

@@ -7,7 +7,7 @@
     <result property="billetNum" column="billet_num"/>
     <result property="createTime" column="create_time"/>
     <result property="billetPicPath" column="billet_pic_path"/>
-
+    <result property="state" column="state"/>
 </resultMap>
 
 <select id="getMsg" parameterType="com.er.model.MaSteelModel"  resultMap="Matools">
@@ -15,10 +15,63 @@
     billet_info.id ,
     billet_info.billet_num,
     billet_info.create_time,
-    billet_info.billet_pic_path
+    billet_info.billet_pic_path,
+    state
     from
     billet_info
+    order by field(state,2,1,0) desc
+<!--    where-->
+<!--    state = #{state}-->
 </select>
 
+<update id="updateByIds" parameterType="com.er.model.MaSteelModel">
+    update billet_info
+    <trim prefix="SET" suffixOverrides=",">
+        <if test="state != null">state = #{state},</if>
+    </trim>
+    where id IN(
+    <foreach collection="ids" item="id" index="index" open="" close="" separator=",">
+        #{id}
+    </foreach>
+    )
+</update>
 
+    <update id="updateById" parameterType="com.er.model.MaSteelModel">
+        update billet_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="state != null">state = #{state},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+
+    <select id="getMsgByState" parameterType="com.er.model.MaSteelModel"  resultMap="Matools">
+    select
+    billet_info.id ,
+    billet_info.billet_num,
+    billet_info.create_time,
+    billet_info.billet_pic_path,
+    state
+    from
+    billet_info
+    where
+    state = #{state}
+    order by field(state,2,1,0) desc
+</select>
+
+    <sql id="selectBilletInfoList">
+        select id, billet_num, billet_info, img_path, billet_width, billet_drum, create_by, create_time, update_by, update_time, remark from billet_info_test order by create_time desc
+    </sql>
+
+    <select id="selectBilletInfoList" parameterType="com.er.model.MaSteelModel" resultMap="Matools">
+        <include refid="selectBilletInfoList"/>
+        <where>
+            <if test="flowlineId != null "> and flowline_id = #{flowlineId}</if>
+            <if test="billetNum != null  and billetNum != ''"> and billet_num = #{billetNum}</if>
+            <if test="billetInfo != null  and billetInfo != ''"> and billet_info = #{billetInfo}</if>
+            <if test="imgPath != null  and imgPath != ''"> and img_path = #{imgPath}</if>
+            <if test="billetWidth != null  and billetWidth != ''"> and billet_width = #{billetWidth}</if>
+            <if test="billetDrum != null  and billetDrum != ''"> and billet_drum = #{billetDrum}</if>
+        </where>
+    </select>
 </mapper>
